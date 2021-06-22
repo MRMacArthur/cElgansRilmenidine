@@ -1,0 +1,27 @@
+#!/bin/bash
+#SBATCH -n 12
+#SBATCH -t 0-12:00
+#SBATCH --mem=50000
+#SBATCH -p shared
+
+module load GCCcore/8.2.0 cURL/7.63.0
+
+curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR911/000/SRR9119230/SRR9119230_1.fastq.gz -o SRR9119230_GSM3815147_RAP_12m_M_3_Mus_musculus_RNA-Seq_1.fastq.gz
+curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR911/000/SRR9119230/SRR9119230_2.fastq.gz -o SRR9119230_GSM3815147_RAP_12m_M_3_Mus_musculus_RNA-Seq_2.fastq.gz
+curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR911/000/SRR9119210/SRR9119210_1.fastq.gz -o SRR9119210_GSM3815127_CR_12m_M_1_Mus_musculus_RNA-Seq_1.fastq.gz
+curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR911/000/SRR9119210/SRR9119210_2.fastq.gz -o SRR9119210_GSM3815127_CR_12m_M_1_Mus_musculus_RNA-Seq_2.fastq.gz
+curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR911/009/SRR9119229/SRR9119229_1.fastq.gz -o SRR9119229_GSM3815146_RAP_12m_M_2_Mus_musculus_RNA-Seq_1.fastq.gz
+curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR911/009/SRR9119229/SRR9119229_2.fastq.gz -o SRR9119229_GSM3815146_RAP_12m_M_2_Mus_musculus_RNA-Seq_2.fastq.gz
+curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR911/008/SRR9119228/SRR9119228_1.fastq.gz -o SRR9119228_GSM3815145_RAP_12m_M_1_Mus_musculus_RNA-Seq_1.fastq.gz
+curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR911/008/SRR9119228/SRR9119228_2.fastq.gz -o SRR9119228_GSM3815145_RAP_12m_M_1_Mus_musculus_RNA-Seq_2.fastq.gz
+curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR911/007/SRR9119217/SRR9119217_1.fastq.gz -o SRR9119217_GSM3815134_CON_12m_M_2_Mus_musculus_RNA-Seq_1.fastq.gz
+curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR911/007/SRR9119217/SRR9119217_2.fastq.gz -o SRR9119217_GSM3815134_CON_12m_M_2_Mus_musculus_RNA-Seq_2.fastq.gz
+curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR911/001/SRR9119211/SRR9119211_1.fastq.gz -o SRR9119211_GSM3815128_CR_12m_M_2_Mus_musculus_RNA-Seq_1.fastq.gz
+curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR911/001/SRR9119211/SRR9119211_2.fastq.gz -o SRR9119211_GSM3815128_CR_12m_M_2_Mus_musculus_RNA-Seq_2.fastq.gz
+curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR911/006/SRR9119216/SRR9119216_1.fastq.gz -o SRR9119216_GSM3815133_CON_12m_M_1_Mus_musculus_RNA-Seq_1.fastq.gz
+curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR911/006/SRR9119216/SRR9119216_2.fastq.gz -o SRR9119216_GSM3815133_CON_12m_M_1_Mus_musculus_RNA-Seq_2.fastq.gz
+curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR911/008/SRR9119218/SRR9119218_1.fastq.gz -o SRR9119218_GSM3815135_CON_12m_M_3_Mus_musculus_RNA-Seq_1.fastq.gz
+curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR911/008/SRR9119218/SRR9119218_2.fastq.gz -o SRR9119218_GSM3815135_CON_12m_M_3_Mus_musculus_RNA-Seq_2.fastq.gz
+curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR911/002/SRR9119212/SRR9119212_1.fastq.gz -o SRR9119212_GSM3815129_CR_12m_M_3_Mus_musculus_RNA-Seq_1.fastq.gz
+curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR911/002/SRR9119212/SRR9119212_2.fastq.gz -o SRR9119212_GSM3815129_CR_12m_M_3_Mus_musculus_RNA-Seq_2.fastq.gz
+

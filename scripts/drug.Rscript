@@ -1,0 +1,12 @@
+#!/usr/bin/env Rscript
+library(Rsubread)
+
+setwd("/n/holyscratch01/mitchell_lab/Users/mmacarthur/elegansColl/drug")
+#buildindex(basename = "subread2_GRCm39", reference = "Mus_musculus.GRCm39.dna.primary_assembly.fa.gz")
+
+fastq.files <- list.files(path = "/n/holyscratch01/mitchell_lab/Users/mmacarthur/elegansColl/drug", pattern = "fastq.gz$", full.names = T)
+align(index = "/n/holyscratch01/mitchell_lab/Users/mmacarthur/elegansColl/subread2_GRCm39", readfile1 = fastq.files, nthreads = 8)
+bam.files <- list.files(path = "/n/holyscratch01/mitchell_lab/Users/mmacarthur/elegansColl/drug", pattern = ".BAM$", full.names = T)
+fc <- featureCounts(bam.files, annot.ext="/n/holyscratch01/mitchell_lab/Users/mmacarthur/elegansColl/Mus_musculus.GRCm39.104.gtf", isGTFAnnotationFile=T, GTF.featureType="exon", GTF.attrType="gene_id", nthreads=8, isPairedEnd=F)
+write.csv(fc$counts, "drugCounts.csv")
+

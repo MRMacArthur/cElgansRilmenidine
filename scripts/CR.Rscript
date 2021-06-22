@@ -1,0 +1,13 @@
+#!/usr/bin/env Rscript
+library(Rsubread)
+
+setwd("/n/holyscratch01/mitchell_lab/Users/mmacarthur/elegansColl/cr")
+#buildindex(basename = "subread_GRCm39", reference = "Mus_musculus.GRCm39.dna.primary_assembly.fa.gz")
+
+fastq.files1 <- list.files(path = "/n/holyscratch01/mitchell_lab/Users/mmacarthur/elegansColl/cr", pattern = "1.fastq.gz$", full.names = T)
+fastq.files2 <- list.files(path = "/n/holyscratch01/mitchell_lab/Users/mmacarthur/elegansColl/cr", pattern = "2.fastq.gz$", full.names = T)
+align(index = "/n/holyscratch01/mitchell_lab/Users/mmacarthur/elegansColl/subread_GRCm39", readfile1 = fastq.files1, readfile2 = fastq.files2, nthreads = 8)
+bam.files <- list.files(path = "/n/holyscratch01/mitchell_lab/Users/mmacarthur/elegansColl/cr", pattern = ".BAM$", full.names = T)
+fc <- featureCounts(bam.files, annot.ext="/n/holyscratch01/mitchell_lab/Users/mmacarthur/elegansColl/Mus_musculus.GRCm39.104.gtf", isGTFAnnotationFile=T, GTF.featureType="exon", GTF.attrType="gene_id", nthreads=8, isPairedEnd=T)
+write.csv(fc$counts, "crCounts.csv")
+

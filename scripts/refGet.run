@@ -1,0 +1,9 @@
+#!/bin/bash
+#SBATCH -n 12
+#SBATCH -t 0-12:00
+#SBATCH --mem=50000
+#SBATCH -p shared
+
+wget http://ftp.ensembl.org/pub/release-104/fasta/mus_musculus/dna/Mus_musculus.GRCm39.dna.primary_assembly.fa.gz
+wget http://ftp.ensembl.org/pub/release-104/gtf/mus_musculus/Mus_musculus.GRCm39.104.gtf.gz
+
